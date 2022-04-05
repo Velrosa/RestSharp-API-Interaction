@@ -42,8 +42,6 @@ namespace RestSharp_API_Interaction
 
             DrinkDetails details = response.Result.DrinkDetailsList[0];
 
-            Console.WriteLine(details);
-
             List<object> refactoredList = new List<object>();
 
             string newName = "";
