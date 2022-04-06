@@ -17,6 +17,12 @@ namespace RestSharp_API_Interaction
 
             string category = Console.ReadLine();
 
+            while (!Validator.IsTextValid(category))
+            {
+                Console.WriteLine("\nInvalid category");
+                category = Console.ReadLine();
+            }
+
             GetDrinksInput(category);
         }
 
@@ -27,6 +33,12 @@ namespace RestSharp_API_Interaction
             Console.Write("Type the ID of a drink to view its details: ");
             string drinkID = Console.ReadLine();
             if (drinkID == "MENU") GetCategoriesInput();
+
+            while (!Validator.IsIdValid(drinkID))
+            {
+                Console.WriteLine("\nInvalid drink");
+                drinkID = Console.ReadLine();
+            }
 
             service.GetDrinkDetails(drinkID);
         }
